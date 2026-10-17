@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>S do Samba · Samba e pagode para shows e eventos</title>
+  <meta name="description" content="Grupo S do Samba: samba de raiz e pagode para shows, eventos e marcas em Laranjeiras do Sul (PR) e região. Peça seu orçamento.">
+  <meta name="theme-color" content="#0E100D">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="S do Samba · Portfólio artístico">
+  <meta property="og:description" content="Samba de raiz e pagode para shows, eventos e marcas que querem a festa cheia.">
+  <meta property="og:image" content="assets/og.jpg">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/tailwind.css">
+  <style>
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+    .nav-link.active { color: #A6E22E; }
+  </style>
+</head>
+<body class="bg-ink text-paper font-sans antialiased">
+
+  <!-- NAV -->
+  <header id="top" class="fixed inset-x-0 top-0 z-50 transition-colors duration-300" data-nav>
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
+      <a href="#inicio" class="flex items-center gap-3" aria-label="S do Samba, início">
+        <img src="assets/logo.png" alt="" class="h-11 w-11">
+        <span class="font-display text-xl font-semibold uppercase tracking-wide">S do Samba</span>
+      </a>
+      <ul class="hidden items-center gap-7 text-sm font-medium md:flex">
+        <li><a class="nav-link hover:text-lime" href="#quem-somos">Quem somos</a></li>
+        <li><a class="nav-link hover:text-lime" href="#repertorio">Repertório</a></li>
+        <li><a class="nav-link hover:text-lime" href="#shows">Shows</a></li>
+        <li><a class="nav-link hover:text-lime" href="#patrocinio">Patrocínio</a></li>
+        <li><a class="rounded-full bg-lime px-5 py-2 font-bold text-ink hover:brightness-110" href="#contato">Orçamento</a></li>
+      </ul>
+      <button id="menuBtn" class="rounded-lg p-2 md:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+    <div id="mobileMenu" class="hidden bg-ink/95 px-5 pb-5 backdrop-blur md:hidden">
+      <ul class="flex flex-col gap-1 text-lg font-medium">
+        <li><a class="block py-2" href="#quem-somos">Quem somos</a></li>
+        <li><a class="block py-2" href="#repertorio">Repertório</a></li>
+        <li><a class="block py-2" href="#shows">Shows</a></li>
+        <li><a class="block py-2" href="#patrocinio">Patrocínio</a></li>
+        <li><a class="mt-2 block rounded-full bg-lime px-5 py-3 text-center font-bold text-ink" href="#contato">Pedir orçamento</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="relative flex min-h-screen items-end overflow-hidden">
+      <img src="assets/palco.jpg" alt="Os quatro integrantes do S do Samba com seus instrumentos em um show" class="absolute inset-0 h-full w-full object-cover object-top">
+      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/20"></div>
+      <div class="relative mx-auto w-full max-w-6xl px-5 pb-16 pt-32 md:pb-24">
+        <p class="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-lime">Portfólio artístico 2026</p>
+        <h1 class="font-display text-6xl font-bold uppercase leading-none sm:text-8xl md:text-9xl">S do Samba</h1>
+        <p class="mt-5 max-w-xl text-lg text-soft md:text-2xl">Samba de raiz e pagode para shows, eventos e marcas que querem a festa cheia.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#contato" class="rounded-full bg-lime px-7 py-3 font-bold text-ink transition hover:brightness-110">Pedir orçamento</a>
+          <a href="#quem-somos" class="rounded-full border border-paper/30 px-7 py-3 font-bold transition hover:border-lime hover:text-lime">Conhecer o grupo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUEM SOMOS -->
+    <section id="quem-somos" class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+      <div class="grid items-center gap-10 md:grid-cols-2 md:gap-16">
+        <div class="reveal">
+          <p class="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-lime">Quem somos</p>
+          <h2 class="font-display text-4xl font-semibold uppercase leading-tight md:text-6xl">Uma roda de samba que vira show</h2>
+          <p class="mt-6 text-lg leading-relaxed text-soft">O <b class="text-paper">Grupo S do Samba</b> entrega uma experiência musical completa, dinâmica e envolvente, e valoriza a sintonia entre os integrantes e a força do samba.</p>
+          <p class="mt-4 text-lg leading-relaxed text-soft">Somos um <b class="text-paper">grupo de amigos de longa data</b> que decidiu levar alegria para mais pessoas. Em cada evento, levamos repertório afinado, presença de palco e interação constante com o público.</p>
+        </div>
+        <img class="reveal aspect-square w-full rounded-3xl object-cover" src="assets/ensaio.jpg" alt="Integrantes do S do Samba com violão, saxofone e percussão na passagem de som" loading="lazy">
+      </div>
+    </section>
+
+    <!-- INTEGRANTES -->
+    <section id="integrantes" class="bg-ink2 py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="reveal">
+          <p class="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-lime">Integrantes</p>
+          <h2 class="font-display text-4xl font-semibold uppercase leading-tight md:text-6xl">Quatro músicos, uma só cadência</h2>
+        </div>
+        <div class="reveal mt-10 h-72 overflow-hidden rounded-3xl bg-paper sm:h-96 md:h-[34rem]">
+          <img src="assets/integrantes.png" alt="Abner, Matias, Cristian e Jean com violão, saxofone, tantã e pandeiro" class="h-full w-full object-cover object-top" loading="lazy">
+        </div>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" id="members"></div>
+      </div>
+    </section>
+
+    <!-- REPERTÓRIO -->
+    <section id="repertorio" class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+      <div class="reveal">
+        <p class="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-lime">Repertório</p>
+        <h2 class="font-display text-4xl font-semibold uppercase leading-tight md:text-6xl">Do samba de raiz ao pagode de hoje</h2>
+      </div>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="reveal rounded-2xl border-t-4 border-lime bg-ink2 p-6"><h3 class="font-display text-2xl font-semibold uppercase">Samba de raiz</h3><p class="mt-2 text-soft">Os grandes clássicos que todo mundo canta junto.</p></article>
+        <article class="reveal rounded-2xl border-t-4 border-lime bg-ink2 p-6"><h3 class="font-display text-2xl font-semibold uppercase">Pagode retrô</h3><p class="mt-2 text-soft">Os pagodes aclamados que marcaram gerações.</p></article>
+        <article class="reveal rounded-2xl border-t-4 border-lime bg-ink2 p-6"><h3 class="font-display text-2xl font-semibold uppercase">Pagode atual</h3><p class="mt-2 text-soft">Os sucessos de agora, com a assinatura do grupo.</p></article>
+        <article class="reveal rounded-2xl border-t-4 border-lime bg-ink2 p-6"><h3 class="font-display text-2xl font-semibold uppercase">Samba-enredo</h3><p class="mt-2 text-soft">Sambas-enredo marcantes para levantar a pista.</p></article>
+      </div>
+      <p class="reveal mt-8 max-w-3xl text-lg text-soft">Releituras modernas que conversam com <b class="text-paper">públicos de todas as idades</b>, e um roteiro que se adapta ao clima de cada evento.</p>
+      <div class="reveal mt-8">
+        <h3 class="mb-4 text-sm font-bold uppercase tracking-[0.25em] text-lime">Não podem faltar</h3>
+        <ul id="songs" class="flex flex-wrap gap-2"></ul>
+      </div>
+    </section>
+
+    <!-- SHOWS -->
+    <section id="shows" class="bg-ink2 py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="reveal">
+          <p class="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-lime">Onde tocamos</p>
+          <h2 class="font-display text-4xl font-semibold uppercase leading-tight md:text-6xl">Um show para cada tipo de evento</h2>
+        </div>
+        <div class="mt-10 grid gap-5 md:grid-cols-2">
+          <div class="reveal rounded-3xl bg-ink p-8">
+            <h3 class="font-display text-3xl font-semibold uppercase text-lime">Empresas e marcas</h3>
+            <ul class="mt-5 space-y-3 text-lg text-soft">
+              <li class="flex gap-3"><span class="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-lime"></span>Inaugurações de lojas e estabelecimentos</li>
+              <li class="flex gap-3"><span class="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-lime"></span>Ações promocionais e lançamentos de produtos</li>
+              <li class="flex gap-3"><span class="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-lime"></span>Feiras, feijoadas corporativas e eventos de marca</li>
+              <li class="flex gap-3"><span class="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-lime"></span>Bares, restaurantes e casas de show</li>
+            </ul>
+          </div>
+          <div class="reveal rounded-3xl bg-ink p-8">
+            <h3 class="font-display text-3xl font-semibold uppercase text-teal">Festas e celebrações</h3>
+            <ul class="mt-5 space-y-3 text-lg text-soft">
+              <li class="flex gap-3"><span class="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-teal"></span>Aniversários e festas privadas</li>
+              <li class="flex gap-3"><span class="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-teal"></span>Casamentos e recepções</li>
+              <li class="flex gap-3"><span class="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-teal"></span>Confraternizações de fim de ano</li>
+              <li class="flex gap-3"><span class="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-teal"></span>Celebrações de pequeno, médio e grande porte</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Formação -->
+        <div class="reveal mt-16">
+          <p class="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-lime">Formação de palco</p>
+          <h3 class="font-display text-3xl font-semibold uppercase md:text-5xl">Harmonia, percussão, sopros e voz</h3>
+        </div>
+        <div class="reveal mt-8 overflow-x-auto rounded-2xl bg-ink">
+          <table class="w-full min-w-[34rem] text-left">
+            <thead><tr class="border-b border-white/10 text-sm uppercase tracking-wider text-lime"><th class="p-4">Seção</th><th class="p-4">Instrumentos</th><th class="p-4">O que entrega</th></tr></thead>
+            <tbody id="formacao" class="divide-y divide-white/5 text-soft"></tbody>
+          </table>
+        </div>
+
+        <!-- Estrutura -->
+        <div class="reveal mt-16 rounded-3xl bg-lime p-8 text-ink md:p-12">
+          <p class="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#2B3A12]">Estrutura do show</p>
+          <h3 class="font-display text-3xl font-semibold uppercase leading-tight md:text-5xl">Chegamos com tudo pronto para tocar</h3>
+          <div class="mt-8 grid gap-8 md:grid-cols-3">
+            <div><p class="font-display text-6xl font-bold leading-none md:text-7xl">2h30</p><p class="mt-2 text-lg">de show contínuo, com roteiro montado para o seu público</p></div>
+            <div><p class="font-display text-6xl font-bold leading-none md:text-7xl">500</p><p class="mt-2 text-lg">pessoas: até esse porte com som e luz próprios, do bar ao salão</p></div>
+            <div><p class="font-display text-6xl font-bold leading-none md:text-7xl">NF</p><p class="mt-2 text-lg">emitida (MEI) e contrato formal de prestação de serviço</p></div>
+          </div>
+          <p class="mt-8 border-t border-[#2B3A12]/40 pt-6 text-lg">Equipe de apoio com técnico de som e roadies para montagem, passagem de som e suporte durante todo o evento.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PATROCÍNIO -->
+    <section id="patrocinio" class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+      <div class="reveal">
+        <p class="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-teal">Para patrocinadores</p>
+        <h2 class="font-display text-4xl font-semibold uppercase leading-tight md:text-6xl">Sua marca no meio da festa</h2>
+        <p class="mt-5 max-w-3xl text-lg text-soft">O S do Samba reúne público que canta junto, dança e compartilha. Associar a sua marca ao grupo é estar presente nos melhores momentos de quem está na festa.</p>
+      </div>
+      <div class="mt-10 grid gap-4 sm:grid-cols-3">
+        <div class="reveal rounded-2xl bg-ink2 p-7"><p class="font-display text-6xl font-bold leading-none text-lime">2h30</p><p class="mt-3 text-soft">de show contínuo, com roteiro para o seu público</p></div>
+        <div class="reveal rounded-2xl bg-ink2 p-7"><p class="font-display text-6xl font-bold leading-none text-lime"><span data-count="100">100</span></p><p class="mt-3 text-soft">pessoas, em média, por show</p></div>
+        <div class="reveal rounded-2xl bg-ink2 p-7"><p class="font-display text-6xl font-bold leading-none text-lime"><span data-count="803">803</span></p><p class="mt-3 text-soft">seguidores no Instagram @s_do_samba</p></div>
+      </div>
+      <div class="reveal mt-10">
+        <h3 class="text-sm font-bold uppercase tracking-[0.25em] text-teal">Já passamos por</h3>
+        <p class="mt-3 max-w-3xl text-lg text-soft">Amorin Alimentos e Produtos Coloniais (lanchonete), Rei do Espetinho (lanchonete e petiscaria), casamentos, aniversários e outros eventos particulares, entre outros lugares.</p>
+      </div>
+      <div class="reveal mt-12">
+        <h3 class="text-sm font-bold uppercase tracking-[0.25em] text-teal">Contrapartidas</h3>
+      </div>
+      <div id="perks" class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="bg-ink2 py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="reveal">
+          <p class="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-lime">Por que o S do Samba</p>
+          <h2 class="font-display text-4xl font-semibold uppercase leading-tight md:text-6xl">O que você leva ao contratar</h2>
+        </div>
+        <div class="mt-10 grid gap-4 md:grid-cols-2">
+          <article class="reveal rounded-2xl border-l-4 border-lime bg-ink p-7"><h3 class="text-2xl font-bold">Um grupo experiente</h3><p class="mt-2 text-soft">Amigos de longa data, entrosados no palco e com estrada para animar qualquer tipo de evento.</p></article>
+          <article class="reveal rounded-2xl border-l-4 border-lime bg-ink p-7"><h3 class="text-2xl font-bold">Repertório versátil</h3><p class="mt-2 text-soft">Do samba tradicional ao pagode retrô e atual, no clima que o seu público pede.</p></article>
+          <article class="reveal rounded-2xl border-l-4 border-lime bg-ink p-7"><h3 class="text-2xl font-bold">Impacto visual e sonoro</h3><p class="mt-2 text-soft">Presença de palco contagiante, interação constante e afinação impecável.</p></article>
+          <article class="reveal rounded-2xl border-l-4 border-lime bg-ink p-7"><h3 class="text-2xl font-bold">Compromisso profissional</h3><p class="mt-2 text-soft">Pontualidade, alinhamento prévio com o contratante e cuidado em cada detalhe.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+      <div class="reveal grid items-center gap-10 rounded-3xl bg-card p-8 md:grid-cols-[16rem_1fr] md:gap-14 md:p-12">
+        <img src="assets/logo.png" alt="Logo S do Samba Pagode" class="mx-auto w-44 md:w-64" loading="lazy">
+        <div>
+          <p class="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-lime">Contato e orçamentos</p>
+          <h2 class="font-display text-4xl font-semibold uppercase leading-tight md:text-5xl">Vamos fazer o seu evento sambar?</h2>
+          <dl class="mt-6 space-y-3 text-lg">
+            <div class="flex flex-wrap gap-x-4"><dt class="w-28 text-sm font-bold uppercase tracking-wider text-lime">Contato</dt><dd>Matias</dd></div>
+            <div class="flex flex-wrap gap-x-4"><dt class="w-28 text-sm font-bold uppercase tracking-wider text-lime">WhatsApp</dt><dd><a class="underline-offset-4 hover:text-lime hover:underline" href="https://wa.me/554291315396?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20S%20do%20Samba%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">(42) 9131-5396</a></dd></div>
+            <div class="flex flex-wrap gap-x-4"><dt class="w-28 text-sm font-bold uppercase tracking-wider text-lime">E-mail</dt><dd><a class="break-all underline-offset-4 hover:text-lime hover:underline" href="mailto:joaomatias2018lds@gmail.com">joaomatias2018lds@gmail.com</a> <button id="copyMail" class="ml-2 rounded-full border border-white/20 px-3 py-0.5 text-xs hover:border-lime hover:text-lime" type="button">Copiar</button></dd></div>
+            <div class="flex flex-wrap gap-x-4"><dt class="w-28 text-sm font-bold uppercase tracking-wider text-lime">Instagram</dt><dd><a class="underline-offset-4 hover:text-lime hover:underline" href="https://instagram.com/s_do_samba" target="_blank" rel="noopener">@s_do_samba</a></dd></div>
+            <div class="flex flex-wrap gap-x-4"><dt class="w-28 text-sm font-bold uppercase tracking-wider text-lime">Base</dt><dd>Laranjeiras do Sul (PR), shows em toda a região</dd></div>
+          </dl>
+          <a href="https://wa.me/554291315396?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20S%20do%20Samba%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener" class="mt-8 inline-block rounded-full bg-lime px-8 py-3 font-bold text-ink transition hover:brightness-110">Chamar no WhatsApp</a>
+          <p class="mt-5 text-sm text-muted">Nota fiscal (MEI) e contrato formal em todas as apresentações.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 px-5 py-8 text-center text-sm text-muted">
+    <p>© <span id="year">2026</span> S do Samba · Laranjeiras do Sul (PR)</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
