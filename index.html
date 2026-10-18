@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/tailwind.css">
+  <link rel="stylesheet" href="assets/tailwind.css?v=3">
   <style>
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.in { opacity: 1; transform: none; }
@@ -25,7 +25,7 @@
 <body class="bg-ink text-paper font-sans antialiased">
 
   <!-- NAV -->
-  <header id="top" class="fixed inset-x-0 top-0 z-50 transition-colors duration-300" data-nav>
+  <header id="top" class="fixed inset-x-0 top-0 z-50 bg-ink backdrop-blur-xl transition-colors duration-300 md:bg-ink/80" data-nav>
     <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
       <a href="#inicio" class="flex items-center gap-3" aria-label="S do Samba, início">
         <img src="assets/logo.png" alt="" class="h-11 w-11">
@@ -55,10 +55,10 @@
 
   <main>
     <!-- HERO -->
-    <section id="inicio" class="relative flex min-h-screen items-end overflow-hidden">
-      <img src="assets/palco.jpg" alt="Os quatro integrantes do S do Samba com seus instrumentos em um show" class="absolute inset-0 h-full w-full object-cover object-top">
-      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/20"></div>
-      <div class="relative mx-auto w-full max-w-6xl px-5 pb-16 pt-32 md:pb-24">
+    <section id="inicio" class="relative flex flex-col bg-ink pt-[68px] md:min-h-screen md:flex-row md:items-end md:overflow-hidden md:pt-0">
+      <div class="relative mt-1.5 w-full shrink-0 md:absolute md:inset-x-0 md:bottom-0 md:top-[76px] md:mt-0"><img src="assets/palco.jpg" alt="Os quatro integrantes do S do Samba com seus instrumentos em um show" width="610" height="452" class="block h-auto w-full md:h-full md:object-cover md:object-top"><div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink to-transparent md:hidden"></div></div>
+      <div class="absolute inset-x-0 bottom-0 top-[76px] hidden bg-gradient-to-t from-ink via-ink/70 to-ink/20 md:block"></div>
+      <div class="relative mx-auto w-full max-w-6xl px-5 pb-12 pt-0 md:pb-24 md:pt-32">
         <p class="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-lime">Portfólio artístico 2026</p>
         <h1 class="font-display text-6xl font-bold uppercase leading-none sm:text-8xl md:text-9xl">S do Samba</h1>
         <p class="mt-5 max-w-xl text-lg text-soft md:text-2xl">Samba de raiz e pagode para shows, eventos e marcas que querem a festa cheia.</p>
@@ -232,6 +232,6 @@
     <p>© <span id="year">2026</span> S do Samba · Laranjeiras do Sul (PR)</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>

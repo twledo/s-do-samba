@@ -1,9 +1,9 @@
 // Dados do grupo (edite aqui para atualizar o site)
 const members = [
-  { name: 'Matias', inst: 'Cavaco, sax e outros sopros, voz' },
+  { name: 'Matias', inst: 'Cavaco, sax e sopros, voz' },
   { name: 'Abner', inst: 'Violão, guitarra, cavaco, voz' },
-  { name: 'Cristian', inst: 'Tantã, pandeiro e outras percussões, voz' },
-  { name: 'Jean', inst: 'Tantã, pandeiro e outras percussões, voz' },
+  { name: 'Cristian', inst: 'Tantã, pandeiro e percussões, voz' },
+  { name: 'Jean', inst: 'Tantã, pandeiro e percussões, voz' },
 ];
 
 const songs = [
