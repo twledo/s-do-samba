@@ -85,7 +85,7 @@ document.querySelectorAll('[data-count]').forEach(n => co.observe(n));
 // Copiar e-mail
 const copy = $('#copyMail');
 copy.addEventListener('click', async () => {
-  try { await navigator.clipboard.writeText('joaomatias2018lds@gmail.com'); copy.textContent = 'Copiado!'; }
+  try { await navigator.clipboard.writeText('sdosamba1@gmail.com'); copy.textContent = 'Copiado!'; }
   catch { copy.textContent = 'Selecione e copie'; }
   setTimeout(() => (copy.textContent = 'Copiar'), 2000);
 });
