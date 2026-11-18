@@ -1,13 +1,18 @@
 # Site S do Samba
 
-Site de uma página (HTML + Tailwind via CDN + JS). Não precisa de build.
+React + Vite + Tailwind v4 + Motion. Publicado no GitHub Pages por GitHub Actions.
 
-## Publicar no GitHub Pages
-1. Crie um repositório no GitHub e envie estes arquivos na raiz (index.html, script.js, assets/, .nojekyll).
-2. No repositório: Settings > Pages > Build and deployment > Source: "Deploy from a branch", branch `main`, pasta `/ (root)`.
-3. O site fica em `https://SEU-USUARIO.github.io/NOME-DO-REPOSITORIO/`.
+## Rodar
+```
+npm install
+npm run dev
+```
 
 ## Editar
-- Textos fixos: `index.html`
-- Integrantes, músicas, formação e contrapartidas: topo do `script.js`
-- Fotos: pasta `assets/`
+- Integrantes, músicas, formação, contrapartidas e contatos: `src/data.ts`
+- Textos das seções: `src/components/`
+- Fotos: `public/assets/`
+
+## Publicar
+1. No GitHub: Settings > Pages > Build and deployment > Source: **GitHub Actions**.
+2. Faça push na `main`. O workflow `.github/workflows/deploy.yml` roda lint, build e publica.
