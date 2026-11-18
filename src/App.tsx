@@ -1,13 +1,12 @@
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Members from './components/Members'
-import Repertoire from './components/Repertoire'
-import Shows from './components/Shows'
-import Sponsorship from './components/Sponsorship'
-import Differentials from './components/Differentials'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { SiteHeader } from '@/components/SiteHeader'
+import { Hero } from '@/components/Hero'
+import { About } from '@/components/About'
+import { Repertoire } from '@/components/Repertoire'
+import { Shows } from '@/components/Shows'
+import { Sponsorship } from '@/components/Sponsorship'
+import { Differentials } from '@/components/Differentials'
+import { Contact } from '@/components/Contact'
+import { SiteFooter } from '@/components/SiteFooter'
 
 export default function App() {
   return (
@@ -18,18 +17,17 @@ export default function App() {
       >
         Pular para o conteúdo
       </a>
-      <Header />
-      <main id="conteudo">
+      <SiteHeader />
+      <main id="conteudo" tabIndex={-1} className="outline-none">
         <Hero />
         <About />
-        <Members />
         <Repertoire />
         <Shows />
         <Sponsorship />
         <Differentials />
         <Contact />
       </main>
-      <Footer />
+      <SiteFooter />
     </>
   )
 }

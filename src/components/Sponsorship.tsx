@@ -1,49 +1,66 @@
-import { perks } from '../data'
-import CountUp from './CountUp'
-import Reveal from './Reveal'
+import { perks } from '@/data'
+import { Badge } from '@/components/ui/badge'
+import { Reveal } from './Reveal'
+import { SectionHeading } from './SectionHeading'
 
-export default function Sponsorship() {
+const numbers = [
+  ['100', 'pessoas, em média, por show'],
+  ['803', 'seguidores no Instagram @s_do_samba'],
+] as const
+
+export function Sponsorship() {
   return (
-    <section id="patrocinio" className="mx-auto max-w-6xl px-5 py-20 md:py-28">
-      <Reveal>
-        <p className="eyebrow !text-teal">Para patrocinadores</p>
-        <h2 className="h2-display">Sua marca no meio da festa</h2>
-        <p className="mt-5 max-w-3xl text-lg text-soft">
-          O S do Samba reúne público que canta junto, dança e compartilha. Associar a sua marca ao grupo é estar presente nos melhores momentos de quem está na festa.
-        </p>
-      </Reveal>
-      <div className="mt-10 grid gap-4 sm:grid-cols-2">
-        <Reveal className="rounded-2xl bg-ink2 p-7">
-          <p className="font-display text-6xl font-bold leading-none text-lime"><CountUp to={100} /></p>
-          <p className="mt-3 text-soft">pessoas, em média, por show</p>
-        </Reveal>
-        <Reveal delay={1} className="rounded-2xl bg-ink2 p-7">
-          <p className="font-display text-6xl font-bold leading-none text-lime"><CountUp to={803} /></p>
-          <p className="mt-3 text-soft">seguidores no Instagram @s_do_samba</p>
-        </Reveal>
-      </div>
-      <Reveal className="mt-10">
-        <h3 className="text-sm font-bold uppercase tracking-[0.25em] text-teal">Já passamos por</h3>
-        <p className="mt-3 max-w-3xl text-lg text-soft">
-          Amorin Alimentos e Produtos Coloniais (lanchonete), Rei do Espetinho (lanchonete e petiscaria), casamentos, aniversários e outros eventos particulares, entre outros lugares.
-        </p>
-      </Reveal>
-      <Reveal className="mt-12">
-        <h3 className="text-sm font-bold uppercase tracking-[0.25em] text-teal">Contrapartidas</h3>
-      </Reveal>
-      <ul className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {perks.map((p, i) => (
-          <Reveal as="li" key={p.title} delay={i} className="rounded-2xl bg-ink2 p-6">
-            <span className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-teal/15 font-bold text-teal">{i + 1}</span>
-            <h3 className="text-xl font-bold">{p.title}</h3>
-            <p className="mt-2 text-soft">{p.text}</p>
+    <section id="patrocinio" aria-labelledby="patrocinio-title" className="bg-ink2 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="grid gap-10 md:grid-cols-12 md:items-end">
+          <div className="md:col-span-7">
+            <SectionHeading id="patrocinio-title" track="04" kicker="Para patrocinadores" tone="teal" title="Sua marca no meio da festa" />
+            <Reveal className="mt-6 text-lg text-soft">
+              <p>
+                O S do Samba reúne público que canta junto, dança e compartilha. Associar a sua marca ao grupo é estar presente nos melhores momentos de quem está na festa.
+              </p>
+            </Reveal>
+          </div>
+          <Reveal delay={1} className="md:col-span-5">
+            <dl className="grid grid-cols-2 gap-6">
+              {numbers.map(([n, t]) => (
+                <div key={n}>
+                  <dt className="font-display text-6xl font-bold leading-none text-teal md:text-7xl">{n}</dt>
+                  <dd className="mt-2 text-sm text-soft">{t}</dd>
+                </div>
+              ))}
+            </dl>
           </Reveal>
-        ))}
-        <Reveal as="li" delay={perks.length} className="flex flex-col justify-center rounded-2xl bg-teal p-6 text-ink">
-          <h3 className="text-xl font-bold">Cotas sob medida</h3>
-          <p className="mt-2">Montamos o pacote de acordo com o objetivo e o investimento da sua marca.</p>
+        </div>
+
+        <Reveal className="mt-14 border-l-2 border-teal pl-5">
+          <h3 className="kicker text-teal">Já passamos por</h3>
+          <p className="mt-3 max-w-3xl text-lg text-soft">
+            Amorin Alimentos e Produtos Coloniais (lanchonete), Rei do Espetinho (lanchonete e petiscaria), casamentos, aniversários e outros eventos particulares, entre outros lugares.
+          </p>
         </Reveal>
-      </ul>
+
+        <div className="mt-16 grid gap-10 md:grid-cols-12">
+          <Reveal className="md:col-span-8">
+            <h3 className="kicker text-teal">Contrapartidas</h3>
+            <ol className="mt-5 grid gap-x-10 sm:grid-cols-2">
+              {perks.map((p, i) => (
+                <li key={p.title} className="flex gap-4 border-t border-border py-5">
+                  <Badge variant="teal" className="mt-0.5">{i + 1}</Badge>
+                  <div>
+                    <h4 className="text-lg font-bold">{p.title}</h4>
+                    <p className="mt-1 text-soft">{p.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </Reveal>
+          <Reveal delay={1} className="self-start rounded-[1.75rem] bg-teal p-7 text-ink md:col-span-4 md:mt-10">
+            <h3 className="font-display text-3xl font-semibold uppercase">Cotas sob medida</h3>
+            <p className="mt-3 text-lg">Montamos o pacote de acordo com o objetivo e o investimento da sua marca.</p>
+          </Reveal>
+        </div>
+      </div>
     </section>
   )
 }

@@ -1,44 +1,75 @@
 import { motion } from 'motion/react'
-import { asset } from '../data'
-import Button from './Button'
+import { ArrowDown } from 'lucide-react'
+import { asset, contact } from '@/data'
+import { ButtonLink } from '@/components/ui/button'
 
+const ease = [0.22, 1, 0.36, 1] as const
 const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const } },
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
 }
 
-export default function Hero() {
+const facts = ['2h30 de show', 'Até 500 pessoas', 'Som e luz próprios', 'NF e contrato']
+
+export function Hero() {
   return (
-    <section id="inicio" className="relative flex flex-col bg-ink pt-[68px] md:min-h-screen md:flex-row md:items-end md:overflow-hidden md:pt-0">
-      <div className="relative mt-1.5 w-full shrink-0 md:absolute md:inset-x-0 md:bottom-0 md:top-[76px] md:mt-0">
-        <img
-          src={asset('integrantes.png')}
-          alt="Os quatro integrantes do S do Samba com seus instrumentos em um show"
-          width={610}
-          height={452}
-          className="block h-auto w-full md:h-full md:object-cover md:object-top"
-        />
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink to-transparent md:hidden" />
-      </div>
-      <div className="absolute inset-x-0 bottom-0 top-[76px] hidden bg-gradient-to-t from-ink via-ink/70 to-ink/20 md:block" />
-      <motion.div
-        className="relative mx-auto w-full max-w-6xl px-5 pb-12 md:pb-24 md:pt-32"
-        initial="hidden"
-        animate="show"
-        transition={{ staggerChildren: 0.07 }}
-      >
-        <motion.p variants={item} className="eyebrow">Portfólio artístico 2026</motion.p>
-        <motion.h1 variants={item} className="font-display text-6xl font-bold uppercase leading-none sm:text-8xl md:text-9xl">
-          S do Samba
-        </motion.h1>
-        <motion.p variants={item} className="mt-5 max-w-xl text-lg text-soft md:text-2xl">
-          Samba de raiz e pagode para shows, eventos e marcas que querem a festa cheia.
-        </motion.p>
-        <motion.div variants={item} className="mt-8 flex flex-wrap gap-3">
-          <Button href="#contato">Pedir orçamento</Button>
-          <Button href="#quem-somos" variant="ghost">Conhecer o grupo</Button>
+    <section id="inicio" aria-labelledby="hero-title" className="relative overflow-hidden pt-16">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 pb-12 pt-6 sm:px-6 md:grid-cols-12 md:items-end md:pb-20 md:pt-14">
+        <motion.div
+          className="md:col-span-7"
+          initial="hidden"
+          animate="show"
+          transition={{ staggerChildren: 0.08 }}
+        >
+          <motion.p variants={item} className="kicker">
+            Samba e pagode · {contact.base.split(',')[0]}
+          </motion.p>
+          <motion.h1 id="hero-title" variants={item} className="display-xl mt-5">
+            <span className="text-outline">S</span> do Samba
+            <span className="mt-2 block text-lime">para a festa cheia.</span>
+          </motion.h1>
+          <motion.p variants={item} className="mt-6 max-w-lg text-lg text-soft md:text-xl">
+            Samba de raiz e pagode para shows, eventos e marcas. Quatro amigos, repertório ensaiado e estrutura própria.
+          </motion.p>
+          <motion.div variants={item} className="mt-8 flex flex-wrap gap-3">
+            <ButtonLink href="#contato" size="lg">Pedir orçamento</ButtonLink>
+            <ButtonLink href="#quem-somos" size="lg" variant="outline">
+              Conhecer o grupo <ArrowDown />
+            </ButtonLink>
+          </motion.div>
         </motion.div>
-      </motion.div>
+
+        <motion.figure
+          className="relative md:col-span-5"
+          initial={{ opacity: 0, scale: 0.96, rotate: 0 }}
+          animate={{ opacity: 1, scale: 1, rotate: -1.5 }}
+          transition={{ duration: 0.6, ease, delay: 0.15 }}
+        >
+          <div className="overflow-hidden rounded-[1.75rem] bg-paper ring-1 ring-border">
+            <img
+              src={asset('integrantes.png')}
+              alt="Os quatro integrantes do S do Samba com violão, saxofone, tantã e pandeiro"
+              width={610}
+              height={452}
+              className="aspect-[4/3] w-full object-cover object-top"
+            />
+          </div>
+          <figcaption className="absolute -bottom-4 left-4 rotate-2 rounded-full bg-teal px-4 py-1.5 text-sm font-bold text-ink">
+            Abner, Matias, Cristian e Jean
+          </figcaption>
+        </motion.figure>
+      </div>
+
+      <div className="border-y border-border bg-ink2">
+        <ul className="mx-auto flex max-w-6xl flex-wrap gap-x-6 gap-y-2 px-4 py-4 text-sm font-medium text-soft sm:px-6">
+          {facts.map((f) => (
+            <li key={f} className="flex items-center gap-2">
+              <span className="size-1.5 rounded-full bg-lime" aria-hidden="true" />
+              {f}
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   )
 }

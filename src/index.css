@@ -1,36 +1,111 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-@theme {
-  --color-ink: #0e100d;
-  --color-ink2: #161a14;
-  --color-card: #1c2119;
-  --color-soft: #b9c2b0;
-  --color-muted: #7e8977;
-  --color-lime: #a6e22e;
-  --color-teal: #2ee6b8;
-  --color-paper: #f2f4ec;
-  --font-display: "Oswald", Arial, sans-serif;
+@custom-variant dark (&:is(.dark *));
+
+/* Paleta do grupo (não alterar) */
+:root {
+  --ink: #0e100d;
+  --ink2: #161a14;
+  --card-bg: #1c2119;
+  --soft: #b9c2b0;
+  --muted-fg: #7e8977;
+  --lime: #a6e22e;
+  --teal: #2ee6b8;
+  --paper: #f2f4ec;
+
+  /* tokens shadcn mapeados para a paleta; o tema escuro é a base */
+  --radius: 0.875rem;
+  --background: var(--ink);
+  --foreground: var(--paper);
+  --card: var(--card-bg);
+  --card-foreground: var(--paper);
+  --popover: var(--ink2);
+  --popover-foreground: var(--paper);
+  --primary: var(--lime);
+  --primary-foreground: var(--ink);
+  --secondary: var(--teal);
+  --secondary-foreground: var(--ink);
+  --muted: var(--ink2);
+  --muted-foreground: var(--soft);
+  --accent: var(--card-bg);
+  --accent-foreground: var(--lime);
+  --destructive: #ff6b5b;
+  --border: rgb(242 244 236 / 0.12);
+  --input: rgb(242 244 236 / 0.18);
+  --ring: var(--lime);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink2: var(--ink2);
+  --color-soft: var(--soft);
+  --color-lime: var(--lime);
+  --color-teal: var(--teal);
+  --color-paper: var(--paper);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle: var(--muted-fg);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-display: "Oswald", "Arial Narrow", Arial, sans-serif;
   --font-sans: "DM Sans", Arial, sans-serif;
 }
 
-html { scroll-behavior: smooth; scroll-padding-top: 76px; background: var(--color-ink); }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body { background: var(--color-ink); color: var(--color-paper); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
-:focus-visible { outline: 2px solid var(--color-lime); outline-offset: 3px; border-radius: 6px; }
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; background: var(--ink); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { @apply bg-background text-foreground font-sans antialiased; -webkit-tap-highlight-color: transparent; }
+  :focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
+  ::selection { background: var(--lime); color: var(--ink); }
+}
 
-@utility eyebrow {
-  margin-bottom: 0.75rem;
+/* rótulo pequeno acima dos títulos, no formato "faixa" de setlist */
+@utility kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
-  color: var(--color-lime);
+  letter-spacing: 0.24em;
+  color: var(--lime);
 }
-@utility h2-display {
+@utility display-xl {
   font-family: var(--font-display);
-  font-size: 2.25rem;
-  line-height: 1.15;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  font-size: clamp(2.5rem, 9vw, 6.5rem);
+}
+@utility display-md {
+  font-family: var(--font-display);
   font-weight: 600;
   text-transform: uppercase;
-  @media (min-width: 48rem) { font-size: 3.75rem; }
+  line-height: 1.02;
+  font-size: clamp(1.75rem, 5vw, 3rem);
+}
+@utility text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--lime);
 }

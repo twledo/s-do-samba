@@ -1,18 +1,18 @@
 import type { ReactNode } from 'react'
 import { motion } from 'motion/react'
 
-type Props = { children: ReactNode; className?: string; delay?: number; as?: 'div' | 'li' | 'article' }
+type Props = { children: ReactNode; className?: string; delay?: number; as?: 'div' | 'li' | 'section' }
 
-// Entrada curta ao rolar. O delay é limitado para listas longas não demorarem.
-export default function Reveal({ children, className, delay = 0, as = 'div' }: Props) {
+// Entrada curta ao rolar: um bloco por vez, nunca item a item em listas longas.
+export function Reveal({ children, className, delay = 0, as = 'div' }: Props) {
   const Tag = motion[as]
   return (
     <Tag
       className={className}
-      initial={{ opacity: 0, y: 18 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: Math.min(delay, 4) * 0.06 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.4, ease: 'easeOut', delay: Math.min(delay, 2) * 0.08 }}
     >
       {children}
     </Tag>
